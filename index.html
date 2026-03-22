@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="FUJI NANO — Công ty Cổ phần Fuji Nano. Công nghệ nano, giải pháp vật liệu và sản xuất chất lượng cao tại Đồng Nai." />
+  <title>Công ty Cổ phần Fuji Nano | FUJI NANO JOINT STOCK COMPANY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-deep: #061a2e;
+      --bg-card: rgba(255, 255, 255, 0.06);
+      --accent: #22d3ee;
+      --accent-dim: #0891b2;
+      --text: #e8f4fc;
+      --text-muted: #94a3b8;
+      --white: #ffffff;
+      --radius: 14px;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Be Vietnam Pro", system-ui, sans-serif;
+      background: var(--bg-deep);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .wrap {
+      width: min(1120px, 92vw);
+      margin-inline: auto;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(6, 26, 46, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(34, 211, 238, 0.12);
+    }
+
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dim));
+      display: grid;
+      place-items: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--bg-deep);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.35rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-dim));
+      color: var(--bg-deep);
+      box-shadow: 0 8px 28px rgba(34, 211, 238, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 36px rgba(34, 211, 238, 0.45);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 7rem 0 4rem;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.35) saturate(1.1);
+    }
+
+    .hero-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg, rgba(6, 26, 46, 0.92) 0%, rgba(6, 26, 46, 0.65) 45%, rgba(6, 26, 46, 0.88) 100%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--white);
+      max-width: 18ch;
+      margin-bottom: 1rem;
+    }
+
+    .hero .sub {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 36rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero .en-name {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* Sections */
+    section {
+      padding: 4.5rem 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-lead {
+      color: var(--text-muted);
+      max-width: 40rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 1.35rem 1.5rem 1.5rem;
+    }
+
+    .card-body h3 {
+      color: var(--white);
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-body p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* About + legal */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 860px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav ul {
+        display: none;
+      }
+    }
+
+    .facts {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .fact {
+      padding: 1rem 1.25rem;
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      border: 1px solid rgba(34, 211, 238, 0.15);
+    }
+
+    .fact strong {
+      display: block;
+      color: var(--accent);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.25rem;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-box {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+    }
+
+    .contact-box h3 {
+      color: var(--white);
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .contact-box dl {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .contact-box dt {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+    }
+
+    .contact-box dd {
+      color: var(--text);
+    }
+
+    form .field {
+      margin-bottom: 1rem;
+    }
+
+    form label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(0, 0, 0, 0.25);
+      color: var(--white);
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    form input:focus,
+    form textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    /* Footer */
+    footer {
+      padding: 2.5rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav-bar">
+      <a class="logo" href="#top">
+        <span class="logo-mark">FN</span>
+        <span>FUJI NANO</span>
+      </a>
+      <nav aria-label="Điều hướng chính">
+        <ul>
+          <li><a href="#top">Trang chủ</a></li>
+          <li><a href="#gioi-thieu">Giới thiệu</a></li>
+          <li><a href="#linh-vuc">Lĩnh vực</a></li>
+          <li><a href="#phap-ly">Pháp lý</a></li>
+          <li><a href="#lien-he">Liên hệ</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary" href="tel:+84583533228">Gọi ngay</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Giới thiệu nổi bật">
+      <div class="hero-bg" aria-hidden="true">
+        <img
+          src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1920&q=80"
+          alt=""
+          width="1920"
+          height="1080"
+          loading="eager"
+        />
+      </div>
+      <div class="wrap hero-inner">
+        <span class="en-name">FUJI NANO JOINT STOCK COMPANY</span>
+        <h1>Dẫn dắt tương lai với nền tảng công nghệ &amp; chất lượng</h1>
+        <p class="sub">
+          <strong>Công ty Cổ phần Fuji Nano</strong> hoạt động với định hướng hiện đại, chú trọng đổi mới và quy trình chuyên nghiệp —
+          sẵn sàng đồng hành cùng đối tác trong các giải pháp vật liệu và ứng dụng công nghệ tiên tiến.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#lien-he">Liên hệ tư vấn</a>
+          <a class="btn btn-ghost" href="#gioi-thieu">Tìm hiểu thêm</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="gioi-thieu">
+      <div class="wrap">
+        <h2 class="section-title">Về chúng tôi</h2>
+        <p class="section-lead">
+          Thành lập từ năm 2022 tại tỉnh Đồng Nai, chúng tôi xây dựng nền tảng vững chắc với vốn điều lệ 10.000.000.000 đồng,
+          hướng tới vận hành minh bạch và phát triển bền vững dưới sự điều hành của đại diện pháp luật.
+        </p>
+        <div class="about-grid">
+          <div>
+            <p style="color: var(--text-muted); margin-bottom: 1.25rem;">
+              Tên thương mại <strong style="color: var(--white);">Fuji Nano</strong> phản ánh tinh thần chuẩn mực, công nghệ và độ chính xác —
+              phù hợp với các lĩnh vực cần chất lượng cao và quy trình kiểm soát nghiêm ngặt.
+            </p>
+            <p style="color: var(--text-muted);">
+              <strong style="color: var(--white);">Ông Nguyễn Văn Hoạt</strong> — Người đại diện theo pháp luật, Giám đốc công ty.
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact">
+              <strong>Trụ sở</strong>
+              Số 222 đường Bình Minh, ấp Trà Cổ, Xã Bình Minh, Huyện Trảng Bom, Tỉnh Đồng Nai, Việt Nam
+            </div>
+            <div class="fact">
+              <strong>Mã số doanh nghiệp</strong>
+              3603882251
+            </div>
+            <div class="fact">
+              <strong>Ngày cấp đăng ký</strong>
+              23 tháng 8 năm 2022
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="linh-vuc" style="background: linear-gradient(180deg, transparent, rgba(8, 145, 178, 0.06));">
+      <div class="wrap">
+        <h2 class="section-title">Hình ảnh minh họa &amp; định hướng</h2>
+        <p class="section-lead">
+          Minh họa trực quan về môi trường nghiên cứu, sản xuất và kiểm soát chất lượng — thể hiện cam kết của Fuji Nano đối với công nghệ và an toàn vận hành.
+        </p>
+        <div class="grid-3">
+          <article class="card">
+            <img
+              src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&q=80"
+              alt="Minh họa cấu trúc phân tử và công nghệ nano"
+              width="800"
+              height="600"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h3>Công nghệ &amp; đổi mới</h3>
+              <p>Hướng tới các giải pháp dựa trên khoa học vật liệu, tối ưu hiệu năng và độ bền sản phẩm.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img
+              src="https://images.unsplash.com/photo-1565514020179-dbf9b383dbd1?auto=format&fit=crop&w=800&q=80"
+              alt="Minh họa dây chuyền và nhà máy hiện đại"
+              width="800"
+              height="600"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h3>Sản xuất có hệ thống</h3>
+              <p>Quy trình được tổ chức bài bản, phù hợp yêu cầu vận hành công nghiệp và kiểm soát chất lượng.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img
+              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80"
+              alt="Minh họa kiến trúc hiện đại, môi trường làm việc chuyên nghiệp"
+              width="800"
+              height="600"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h3>Đối tác tin cậy</h3>
+              <p>Lấy minh bạch thông tin pháp lý và uy tín làm nền tảng hợp tác lâu dài.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="phap-ly">
+      <div class="wrap">
+        <h2 class="section-title">Thông tin pháp lý</h2>
+        <p class="section-lead">
+          Thông tin đăng ký doanh nghiệp công bố — hỗ trợ đối tác và khách hàng đối chiếu nhanh.
+        </p>
+        <div class="facts" style="max-width: 42rem;">
+          <div class="fact">
+            <strong>Tên công ty (tiếng Việt)</strong>
+            CÔNG TY CỔ PHẦN FUJI NANO
+          </div>
+          <div class="fact">
+            <strong>Tên công ty (tiếng Anh)</strong>
+            FUJI NANO JOINT STOCK COMPANY
+          </div>
+          <div class="fact">
+            <strong>Mã số doanh nghiệp</strong>
+            3603882251
+          </div>
+          <div class="fact">
+            <strong>Vốn điều lệ</strong>
+            10.000.000.000 đồng (Mười tỷ đồng)
+          </div>
+          <div class="fact">
+            <strong>Điện thoại</strong>
+            <a href="tel:+84583533228">+84583533228</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lien-he">
+      <div class="wrap">
+        <h2 class="section-title">Liên hệ</h2>
+        <p class="section-lead">
+          Quý khách có thể gọi trực tiếp hoặc gửi nội dung qua biểu mẫu bên dưới (gửi qua email cần cấu hình backend; hiện tại dùng để ghi nhận nội dung trên trình duyệt).
+        </p>
+        <div class="contact-grid">
+          <div class="contact-box">
+            <h3>Thông tin liên hệ</h3>
+            <dl>
+              <dt>Địa chỉ</dt>
+              <dd>Số 222 đường Bình Minh, ấp Trà Cổ, Xã Bình Minh, Huyện Trảng Bom, Tỉnh Đồng Nai, Việt Nam</dd>
+              <dt>Điện thoại</dt>
+              <dd><a href="tel:+84583533228">+84583533228</a></dd>
+              <dt>Email</dt>
+              <dd><a href="mailto:Michelledks8908@gmail.com">Michelledks8908@gmail.com</a></dd>
+            </dl>
+          </div>
+          <div class="contact-box">
+            <h3>Gửi yêu cầu</h3>
+            <form id="contact-form" action="#" method="get" onsubmit="event.preventDefault(); alert('Cảm ơn quý khách. Vui lòng liên hệ qua điện thoại để được phản hồi nhanh nhất.');">
+              <div class="field">
+                <label for="name">Họ và tên</label>
+                <input id="name" name="name" type="text" autocomplete="name" required />
+              </div>
+              <div class="field">
+                <label for="phone">Số điện thoại</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" required />
+              </div>
+              <div class="field">
+                <label for="message">Nội dung</label>
+                <textarea id="message" name="message" required placeholder="Mô tả nhu cầu hợp tác hoặc câu hỏi..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Gửi thông tin</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© <span id="y"></span> Công ty Cổ phần Fuji Nano. Mã số DN: 3603882251.</p>
+      <p>Trụ sở: Đồng Nai, Việt Nam.</p>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
